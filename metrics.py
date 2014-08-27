@@ -1,5 +1,6 @@
 from scipy.stats import beta
 from scipy.stats import binom_test
+import sklearn.metrics as m
  
 def binom_interval(success, total, confint=0.95):
     '''
@@ -10,7 +11,7 @@ def binom_interval(success, total, confint=0.95):
     return (lower, upper)
     
 def classification_metrics(y_test, y_pred):
-    cm = confusion_matrix(y_test, y_pred)
+    cm = m.confusion_matrix(y_test, y_pred)
     #95% confidence interval
     #No-information rate
     #P-value [acc > NIR]

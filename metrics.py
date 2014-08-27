@@ -11,6 +11,8 @@ def binom_interval(success, total, confint=0.95):
     return (lower, upper)
     
 def classification_metrics(y_test, y_pred):
+ '''prints out a series of useful classifier statistics,
+ loosely based off of R's caret package'''
     cm = m.confusion_matrix(y_test, y_pred)
     #95% confidence interval
     #No-information rate

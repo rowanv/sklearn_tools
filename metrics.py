@@ -26,3 +26,10 @@ def classification_metrics(y_test, y_pred):
     print 'Accuracy:', m.accuracy_score(y_test, y_pred)
     print 'Sensitivity (True Positive Rate):', cm[0,0]/(cm[0,0] + cm[1,0])
     print 'Specificity (True Negative Rate):', cm[1,1]/(cm[0,1] + cm[1,1])
+
+
+def normalize_df(df):
+    '''normalizes a data frame  using unity-based normalization
+    returns: data frame
+    '''
+    return (df - df.min()) / (df.max() - df.min())    
